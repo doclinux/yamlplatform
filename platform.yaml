@@ -146,4 +146,4 @@ Resources:
             ToPort: 80
         Tags:
             - Key: Name
-            Value: WebSG
+              Value: WebSG
