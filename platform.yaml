@@ -89,7 +89,7 @@ Resources:
         Ref: RouteTable
 
 # Subnets
-  Subnet1:
+  WebSubnet:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: {Ref: AvailabilityZone1}
@@ -102,7 +102,7 @@ Resources:
               - '-'
               - [{Ref: 'AWS::StackName'}, {Ref: AvailabilityZone1}]
       VpcId: {Ref: VPC}
-  Subnet2:
+  DBSubnet1:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: {Ref: AvailabilityZone1}
@@ -115,7 +115,7 @@ Resources:
               - '-'
               - [{Ref: 'AWS::StackName'}, {Ref: AvailabilityZone1}]
       VpcId: {Ref: VPC}
-  Subnet3:
+  DBSubnet2:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: {Ref: AvailabilityZone2}
@@ -134,21 +134,21 @@ Resources:
       RouteTableId:
         Ref: RouteTable
       SubnetId:
-        Ref: Subnet1
+        Ref: WebSubnet
   SubnetAssoc2:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId:
         Ref: RouteTable
       SubnetId:
-        Ref: Subnet2
+        Ref: DBSubnet1
   SubnetAssoc3:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId:
         Ref: RouteTable
       SubnetId:
-        Ref: Subnet3
+        Ref: DBSubnet2
 #Security Groups
   WebSG:
     Type: "AWS::EC2::SecurityGroup"
