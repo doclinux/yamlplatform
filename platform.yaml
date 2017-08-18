@@ -153,13 +153,17 @@ Resources:
       VpcId: {Ref: VPC}
       GroupDescription: Access to Database
       SecurityGroupIngress:
-          SourceSecurityGroupId : {Ref: WebSG}
-          IpProtocol: -1
+      -    CidrIp : 188.65.56.229/32
+          FromPort : 80
+          ToPort : 80
+          IpProtocol: tcp
           ToPort: 3306
-      SecurityGroupIngress:
-          CidrIp : 188.65.56.229/32
-          IpProtocol: -1
-          ToPort: 3306
+      -   GroupName: !Ref DBSG
+          IpProtocol: tcp
+          FromPort: '80'
+          ToPort: '80'
+          SourceSecurityGroupName: !Ref WebSG
       Tags:
           - Key: Name
             Value: DBSG
+  
