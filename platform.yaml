@@ -161,7 +161,7 @@ Resources:
       -   IpProtocol: tcp
           FromPort: '80'
           ToPort: '80'
-          SourceSecurityGroupName: !Ref WebSG
+          SourceSecurityGroupName: {Ref: WebSG}
       Tags:
           - Key: Name
             Value: DBSG
