@@ -189,7 +189,7 @@ Resources:
         KeyName: TC-Default
         InstanceType: t2.micro
         SecurityGroups:
-        - !Ref WebSG
+        - {Ref: WebSG}
         BlockDeviceMappings:
         -
           DeviceName: /dev/sda1
