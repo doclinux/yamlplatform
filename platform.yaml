@@ -100,7 +100,7 @@ Resources:
           Value:
             Fn::Join:
               - '-'
-              - [{Ref: 'AWS::StackName'}, {Ref: AvailabilityZone1}]
+              - [{Ref: Customer}, {Ref: 'AWS::StackName'}, {Ref: AvailabilityZone1}]
       VpcId: {Ref: VPC}
   DBSubnet1:
     Type: AWS::EC2::Subnet
