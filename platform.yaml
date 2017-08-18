@@ -77,7 +77,7 @@ Resources:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: {Ref: AvailabilityZone1}
-      CidrBlock: {Ref: WebSubnetCIDR}
+      CidrBlock: {Ref: SubnetCIDR1}
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
@@ -103,7 +103,7 @@ Resources:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: {Ref: AvailabilityZone2}
-      CidrBlock: {Ref: DBSubnetCIDR2}
+      CidrBlock: {Ref: DBSubnetCIDR1}
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
