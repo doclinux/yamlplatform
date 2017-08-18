@@ -164,7 +164,6 @@ Resources:
   WebToDBIngress:
     Type: 'AWS::EC2::SecurityGroupIngress'
     Properties:
-      VpcId: {Ref: VPC}
       GroupName: !Ref DBSG
       IpProtocol: tcp
       FromPort: '80'
