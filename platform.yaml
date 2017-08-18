@@ -126,7 +126,7 @@ Resources:
           Value:
             Fn::Join:
               - '-'
-              - [{Ref: Customer}, "DataSubnet", {Ref: AvailabilityZone1}]
+              - [{Ref: Customer}, "DataSubnet", {Ref: AvailabilityZone2}]
       VpcId: {Ref: VPC}
   SubnetAssoc1:
     Type: AWS::EC2::SubnetRouteTableAssociation
