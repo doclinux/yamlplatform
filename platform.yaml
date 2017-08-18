@@ -141,6 +141,6 @@ Resources:
         VpcId: {Ref: VPC}
         GroupDescription: Access to the load balancer that sits in front of ECS
         SecurityGroupIngress:
-        - CidrIp: 0.0.0.0/0
-           IpProtocol: -1
-           ToPort: 80
+          CidrIp: 0.0.0.0/0
+          IpProtocol: -1
+          ToPort: 80
