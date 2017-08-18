@@ -185,7 +185,7 @@ Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
-        ImageId: !FindInMap [ AWSRegionArch2AMI, !Ref 'AWS::Region' , !FindInMap [ AWSInstanceType2Arch, !Ref InstanceType, Arch ] ]
+        ImageId: ami-03998867
         KeyName: TC-Default
         InstanceType: t2.micro
         SecurityGroups:
