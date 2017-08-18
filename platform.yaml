@@ -147,3 +147,19 @@ Resources:
         Tags:
             - Key: Name
               Value: WebSG
+  DBSG:
+  Type: "AWS::EC2::SecurityGroup"
+  Properties:
+      VpcId: {Ref: VPC}
+      GroupDescription: Access to Database
+      SecurityGroupIngress:
+          SourceSecurityGroupId : {Ref: WebSG}
+          IpProtocol: -1
+          ToPort: 3306
+      SecurityGroupIngress:
+          CidrIp : 188.65.56.229/32
+          IpProtocol: -1
+          ToPort: 3306
+      Tags:
+          - Key: Name
+            Value: WebSG
