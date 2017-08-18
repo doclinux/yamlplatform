@@ -137,7 +137,10 @@ Resources:
         Ref: Subnet3
   WebSG:
     Type: "AWS::EC2::SecurityGroup"
-Properties:
-  GroupName: WebSecurityGroup
-  GroupDescription: Group for Web
-  VpcId: {Ref: VPC}
+      Properties:
+        VpcId: {Ref: VPC}
+        GroupDescription: Access to the load balancer that sits in front of ECS
+        SecurityGroupIngress:
+        - CidrIp: 0.0.0.0/0
+           IpProtocol: -1
+           ToPort: 80
