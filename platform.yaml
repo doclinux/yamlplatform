@@ -153,7 +153,7 @@ Resources:
       VpcId: {Ref: VPC}
       GroupDescription: Access to Database
       SecurityGroupIngress:
-      -    CidrIp : 188.65.56.229/32
+      -   CidrIp : 188.65.56.229/32
           FromPort : 80
           ToPort : 80
           IpProtocol: tcp
@@ -166,4 +166,3 @@ Resources:
       Tags:
           - Key: Name
             Value: DBSG
-  
