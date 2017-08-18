@@ -3,6 +3,8 @@ Description: VPC Network Stack
 Metadata: {}
 Mappings: {}
 Conditions: {}
+
+# Things we'll need
 Outputs: {}
 Parameters:
   Customer:
@@ -37,6 +39,8 @@ Parameters:
     Default: 10.1.3.0/24
     Description: VPC CIDR Block for the DB Subnet (eg 10.0.0.0/24)
     Type: String
+
+# Create VPC
 Resources:
   VPC:
     Type: AWS::EC2::VPC
@@ -49,6 +53,8 @@ Resources:
         - Key: Name
           Value:
             Ref: AWS::StackName
+
+#IGW
   InternetGateway:
     Type: AWS::EC2::InternetGateway
     Properties:
@@ -63,6 +69,8 @@ Resources:
         Ref: InternetGateway
       VpcId:
         Ref: VPC
+
+#RouteTables
   RouteTable:
     Type: AWS::EC2::RouteTable
     Properties:
@@ -79,6 +87,8 @@ Resources:
         Ref: InternetGateway
       RouteTableId:
         Ref: RouteTable
+
+# Subnets
   Subnet1:
     Type: AWS::EC2::Subnet
     Properties:
@@ -139,6 +149,7 @@ Resources:
         Ref: RouteTable
       SubnetId:
         Ref: Subnet3
+#Security Groups
   WebSG:
     Type: "AWS::EC2::SecurityGroup"
     Properties:
