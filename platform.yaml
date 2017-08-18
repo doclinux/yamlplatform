@@ -5,6 +5,10 @@ Mappings: {}
 Conditions: {}
 Outputs: {}
 Parameters:
+  Customer:
+    Default: example
+    Description: Customer Name/identifier
+    Type: String
   CidrBlock:
     AllowedPattern: '((\d{1,3})\.){3}\d{1,3}/\d{1,2}'
     Default: 10.1.0.0/16
@@ -44,7 +48,7 @@ Resources:
       Tags:
         - Key: Name
           Value:
-            Ref: AWS::StackName
+            [{Ref: Customer},{'AWS::StackName'}]
   InternetGateway:
     Type: AWS::EC2::InternetGateway
     Properties:
