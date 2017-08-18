@@ -180,3 +180,22 @@ Resources:
       Tags:
           - Key: Name
             Value: DBSG
+
+  # Instance
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+        ImageId: !FindInMap [ AWSRegionArch2AMI, !Ref 'AWS::Region' , !FindInMap [ AWSInstanceType2Arch, !Ref InstanceType, Arch ] ]
+        KeyName: TC-Default
+        InstanceType: t2.micro
+        SecurityGroups:
+        - !Ref WebSG
+        BlockDeviceMappings:
+        -
+          DeviceName: /dev/sda1
+          Ebs:
+            VolumeSize: 50
+        -
+          DeviceName: /dev/sdm
+          Ebs:
+            VolumeSize: 100
