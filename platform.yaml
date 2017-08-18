@@ -162,4 +162,4 @@ Resources:
           ToPort: 3306
       Tags:
           - Key: Name
-            Value: WebSG
+            Value: DBSG
