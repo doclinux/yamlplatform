@@ -158,8 +158,7 @@ Resources:
           ToPort : 80
           IpProtocol: tcp
           ToPort: 3306
-      -   GroupName: !Ref DBSG
-          IpProtocol: tcp
+      -   IpProtocol: tcp
           FromPort: '80'
           ToPort: '80'
           SourceSecurityGroupName: !Ref WebSG
