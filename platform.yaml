@@ -100,7 +100,7 @@ Resources:
           Value:
             Fn::Join:
               - '-'
-              - [{Ref: Customer}, "WebSubnet", {Ref: 'AWS::StackName'}, {Ref: AvailabilityZone1}]
+              - [{Ref: Customer}, "WebSubnet", {Ref: AvailabilityZone1}]
       VpcId: {Ref: VPC}
   DBSubnet1:
     Type: AWS::EC2::Subnet
@@ -113,7 +113,7 @@ Resources:
           Value:
             Fn::Join:
               - '-'
-              - [{Ref: 'AWS::StackName'}, {Ref: AvailabilityZone1}]
+              - [{Ref: Customer}, "DataSubnet", {Ref: AvailabilityZone1}]
       VpcId: {Ref: VPC}
   DBSubnet2:
     Type: AWS::EC2::Subnet
@@ -126,7 +126,7 @@ Resources:
           Value:
             Fn::Join:
               - '-'
-              - [{Ref: 'AWS::StackName'}, {Ref: AvailabilityZone2}]
+              - [{Ref: Customer}, "DataSubnet", {Ref: AvailabilityZone1}]
       VpcId: {Ref: VPC}
   SubnetAssoc1:
     Type: AWS::EC2::SubnetRouteTableAssociation
