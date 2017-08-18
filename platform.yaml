@@ -137,7 +137,7 @@ Resources:
         Ref: Subnet3
   WebSG:
     Type: "AWS::EC2::SecurityGroup"
-      Properties:
+    Properties:
         VpcId: {Ref: VPC}
         GroupDescription: Access to the load balancer that sits in front of ECS
         SecurityGroupIngress:
