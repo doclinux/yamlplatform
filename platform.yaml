@@ -135,3 +135,13 @@ Resources:
         Ref: RouteTable
       SubnetId:
         Ref: Subnet3
+  WebSG:
+    Type: "AWS::EC2::SecurityGroup"
+Properties:
+  GroupName: WebSecurityGroup
+  GroupDescription: Group for Web
+  SecurityGroupIngress:
+    CidrIp: 0.0.0.0/0
+    IpProtocol: TCP
+    ToPort: 80
+  VpcId: {Ref: VPC}
