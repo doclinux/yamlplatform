@@ -139,11 +139,11 @@ Resources:
     Type: "AWS::EC2::SecurityGroup"
     Properties:
         VpcId: {Ref: VPC}
-        GroupDescription: Access to the load balancer that sits in front of ECS
+        GroupDescription: Access to webserver
         SecurityGroupIngress:
-          CidrIp: 0.0.0.0/0
-          IpProtocol: -1
-          ToPort: 80
+            CidrIp: 0.0.0.0/0
+            IpProtocol: -1
+            ToPort: 80
         Tags:
-          Key: Name
-          Value: WebSG
+            - Key: Name
+            Value: WebSG
