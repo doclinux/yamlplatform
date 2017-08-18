@@ -154,6 +154,8 @@ Resources:
       GroupDescription: Access to Database
       SecurityGroupIngress:
           CidrIp : 188.65.56.229/32
+          FromPort : 80
+          ToPort : 80
           IpProtocol: tcp
           ToPort: 3306
       Tags:
