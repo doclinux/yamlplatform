@@ -45,10 +45,10 @@ Resources:
         Ref: CidrBlock
       EnableDnsHostnames: true
       EnableDnsSupport: true
-        Tags:
-          - Key: Name
-            Value:
-              Ref: AWS::StackName
+      Tags:
+        - Key: Name
+          Value:
+            Ref: AWS::StackName
   InternetGateway:
     Type: AWS::EC2::InternetGateway
     Properties:
