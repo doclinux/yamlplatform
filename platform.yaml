@@ -126,10 +126,10 @@ Resources:
         Ref: RouteTable
       SubnetId:
         Ref: Subnet2
-SubnetAssoc3:
-  Type: AWS::EC2::SubnetRouteTableAssociation
-  Properties:
-    RouteTableId:
-      Ref: RouteTable
-    SubnetId:
-      Ref: Subnet3
+  SubnetAssoc3:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId:
+        Ref: RouteTable
+      SubnetId:
+        Ref: Subnet3
