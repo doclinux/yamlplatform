@@ -159,7 +159,7 @@ Resources:
       Tags:
           - Key: Name
             Value: DBSG
-  SGBaseIngress:
+  WebToDBIngress:
     Type: 'AWS::EC2::SecurityGroupIngress'
     Properties:
       GroupName: !Ref DBSG
