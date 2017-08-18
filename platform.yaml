@@ -148,8 +148,8 @@ Resources:
             - Key: Name
               Value: WebSG
   DBSG:
-  Type: "AWS::EC2::SecurityGroup"
-  Properties:
+    Type: "AWS::EC2::SecurityGroup"
+    Properties:
       VpcId: {Ref: VPC}
       GroupDescription: Access to Database
       SecurityGroupIngress:
